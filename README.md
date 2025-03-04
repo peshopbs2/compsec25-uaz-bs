@@ -23,7 +23,7 @@
 ```
 
 ## Упражнение 2
-- Дешифриране на Шифър на Цезар [cezar_decode.c]()
+- Дешифриране на Шифър на Цезар [cezar_decode.c](https://github.com/peshopbs2/compsec25-uaz-bs/blob/main/cezar_decode.c)
 
 ```
 Задачи:
