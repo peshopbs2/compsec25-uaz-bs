@@ -32,17 +32,49 @@ char* cezar_decipher(char* cipher, int key)
     return str;
 }
 
+int read_cipher(char* filename, char* cipher)
+{
+    FILE* fp;
+    fp = fopen(filename, "r");
+    if(fp == NULL)
+    {
+        printf("Error opening file.\n");
+        return EXIT_FAILURE;
+    }
+
+    if(fgets(cipher, MAXN, fp) == NULL)
+    {
+        printf("Error reading from file.\n");
+        return EXIT_FAILURE;
+    }
+
+    fclose(fp);
+
+    return EXIT_SUCCESS;
+}
+
 
 int main()
 {
-    char str[MAXN];
-    scanf("%s", str); //fgets?
+    char filename[MAXN];
+    printf("Enter filename: \n");
+    scanf("%s", filename);
+    char cipher[MAXN];
+    if(read_cipher(filename, cipher) == EXIT_SUCCESS)
+    {
+        int key;
+        printf("Enter key:\n");
+        scanf("%d", &key);
+    
+        char* text = cezar_decipher(cipher, key);
 
-    int key;
-    scanf("%d", &key);
+        printf("%s", text);
+        free(text);
 
-    char* text = cezar_decipher(str, key);
-    printf("%s", text);
-    free(text);
-    return EXIT_SUCCESS;
+        return EXIT_SUCCESS;    
+    }
+    else
+    {
+        return EXIT_FAILURE;
+    }
 }
