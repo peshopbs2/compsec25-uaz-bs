@@ -1,7 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
+#include <math.h>
 #define MAXN 1000
+#define ALPHA_LENGTH 26
+#define COMMON_COUNT 10
 
 char* cezar_decipher(char* cipher, int key)
 {
@@ -30,7 +34,6 @@ char* cezar_decipher(char* cipher, int key)
     return plaintext;
 }
 
-
 int read_cipher(char* filename, char* cipher)
 {
     FILE *fp = fopen(filename, "r");
@@ -49,23 +52,49 @@ int read_cipher(char* filename, char* cipher)
     return EXIT_SUCCESS;
 }
 
-void write_text(char* filename, char* text)
+int* count_frequencies(char* cipher)
 {
-    FILE *fp = fopen(filename, "wb");
-    fprintf(fp, "%s", text);
-    fclose(fp);
+    int* frequency = (int*) malloc(sizeof(int) * ALPHA_LENGTH);
+    memset(frequency, 0, sizeof(int) * ALPHA_LENGTH);
+    int length = strlen(cipher);
+    for(int i = 0; i < length; i++)
+    {
+        int position = tolower(cipher[i]) - 'a';
+        frequency[position]++;
+    }
+
+    return frequency;
+}
+
+int get_max_index(int* frequencies)
+{
+    int max_index = 0;
+    for(int i = 0; i < ALPHA_LENGTH; i++)
+    {
+        if(frequencies[i] > frequencies[max_index])
+        {
+            max_index = i;
+        }
+    }
+    return max_index;
 }
 
 int main()
 {
+    char filename[MAXN];
+    scanf("%s", filename);
     char cipher[MAXN];
-    read_cipher("cezar.txt", cipher);
-
-    int key;
-    scanf("%d", &key);
-    char* plaintext = cezar_decipher(cipher, key);
-    printf("%s", plaintext);
-    write_text("plaintext.txt", plaintext);
-    free(plaintext);
+    read_cipher(filename, cipher);
+    int* frequencies = count_frequencies(cipher);
+    char max_letter = get_max_index(frequencies) + 'a';
+    char common_letters[COMMON_COUNT] = 
+        {'e', 't', 'a', 'o', 'i', 'n', 's', 'r', 'h', 'l'};
+    for(int i = 0; i < COMMON_COUNT; i++)
+    {
+        int key = abs(max_letter - common_letters[i]);
+        char* plaintext = cezar_decipher(cipher, key);
+        printf("Key = %d, result: %s\n", key, plaintext);
+        free(plaintext);
+    }
     return EXIT_SUCCESS;
 }
