@@ -61,3 +61,27 @@
 
 ## Упражнение 6 (14.04.2025 - 15.04.2025)
 - DES [des_encrypt.c](https://github.com/peshopbs2/compsec25-uaz-bs/blob/main/des_encrypt.c)
+- DES decrypt [des_decrypt.c]()
+
+```
+Задачи:
+1. Напишете програма, която комбинира шифрирането и дешифрирането на DES. Програмата да работи с файлове.
+```
+
+## Упражнение 7
+- RSA генериране на ключове [rsa_generate_keys.c]()
+- RSA криптиране [rsa_encrypt.c]()
+- RSA декриптиране [rsa_decrypt.c]()
+
+## Упражнение 8
+- MD5 [md5.c]()
+- SHA-x
+
+## Упражнение 9
+- Brute force MD5/SHA-x [md5_bruteforce.c]()
+
+## Упражнение 10
+- Речникова атака MD5/SHA-x [md5_dictionary.c]()
+
+## Упражнение 11
+- /etc/shadow файл
