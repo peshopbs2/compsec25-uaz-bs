@@ -61,7 +61,7 @@
 
 ## Упражнение 6 (14.04.2025 - 15.04.2025)
 - DES [des_encrypt.c](https://github.com/peshopbs2/compsec25-uaz-bs/blob/main/des_encrypt.c)
-- DES decrypt [des_decrypt.c]()
+- DES decrypt [des_decrypt.c](https://github.com/peshopbs2/compsec25-uaz-bs/blob/main/des_decrypt.c)
 
 ```
 Задачи:
@@ -69,9 +69,9 @@
 ```
 
 ## Упражнение 7
-- RSA генериране на ключове [rsa_generate_keys.c]()
-- RSA криптиране [rsa_encrypt.c]()
-- RSA декриптиране [rsa_decrypt.c]()
+- RSA генериране на ключове [rsa_generate_keys.c](https://github.com/peshopbs2/compsec25-uaz-bs/blob/main/rsa_generate_keys.c)
+- RSA криптиране [rsa_encrypt.c](https://github.com/peshopbs2/compsec25-uaz-bs/blob/main/rsa_encrypt.c)
+- RSA декриптиране [rsa_decrypt.c](https://github.com/peshopbs2/compsec25-uaz-bs/blob/main/rsa_decrypt.c)
 
 ## Упражнение 8
 - MD5 [md5.c]()
