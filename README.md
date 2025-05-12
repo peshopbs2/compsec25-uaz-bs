@@ -73,10 +73,21 @@
 - RSA криптиране [rsa_encrypt.c](https://github.com/peshopbs2/compsec25-uaz-bs/blob/main/rsa_encrypt.c)
 - RSA декриптиране [rsa_decrypt.c](https://github.com/peshopbs2/compsec25-uaz-bs/blob/main/rsa_decrypt.c)
 
-## Упражнение 8
-- MD5 [md5.c]()
-- SHA-x
+```
+Задачи:
+1. Напишете програма, която получава файл, който криптира чрез публичен ключ.
+2. Напишете програма, която получава файл, който декриптира чрез частен ключ.
+```
 
+## Упражнение 8
+- MD5 [md5.c](https://github.com/peshopbs2/compsec25-uaz-bs/blob/main/md5.c)
+- SHA-256 [sha256.c](https://github.com/peshopbs2/compsec25-uaz-bs/blob/main/sha256.c)
+
+```
+Задачи:
+1. Напишете програма, която изчислява checksum на файл чрез MD5.
+2. Напишете програма, която изчислява checksum на файл чрез SHA-256.
+```
 ## Упражнение 9
 - Brute force MD5/SHA-x [md5_bruteforce.c]()
 
